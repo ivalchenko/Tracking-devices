@@ -1,0 +1,7 @@
+header, nav, footer, article, aside, section, address {
+	display: block;
+}
+
+footer {
+	clear: both;
+}

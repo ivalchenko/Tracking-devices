@@ -1,0 +1,27 @@
+#content article {
+	padding-bottom: 5em;
+}
+
+#content article:first-of-type {
+	width: 49%;
+	float: left;
+}
+
+#content article:last-of-type {
+	width: 49%;
+	float: right;
+}
+
+#content article h2 {
+	font-size: 2em;
+	padding-bottom: 1em;
+}
+
+#content article h2 span {
+	color: #d09d5a;
+}
+
+#content article p {
+	font-size: 1.5em;
+	width: 95%;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>	
+		<meta charset="utf-8">
+		<title>TD | Home</title>
+	
+		<link rel="stylesheet" href="css/new_elements.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/home.css">
+		
+		<!--Обмануть старый IE и заставить его применять стили CSS к элементам HTML5. Взято из книги Б.Лоусона и Р.Шарпа.-->
+		<script src="js/new_elements.js"></script>
+	</head>
+	
+	<body> 
+		<header>
+			<section>
+				<form action="/" method="POST">
+				    <input type="text" id="name" name="login" placeholder="Username:*" pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$">
+				    <input type="password" id="email" name="password" placeholder="Password:*">
+			    </form>
+
+			    <p>
+			    	<a href="#">Create new account</a>
+			    	<br>
+			    	<a href="#">Request new password</a>
+			    </p>
+
+			    <div>
+			    	<a href="#">Log in</a>
+			    </div>
+		    </section>
+
+		    <section>
+			    <a href="#">
+					<img src="img/logo.png" alt="tracking_devices_logo">
+				</a>
+			</section>
+
+			<nav>
+				<ul>
+					<li class="home_menu_item"><p><a href="#">Home</a></p></li>
+					<li class="demo_menu_item"><p><a href="#">Demo</a></p></li>
+					<li class="download_menu_item"><p><a href="#">Download</a></p></li>
+					<li class="team_menu_item"><p><a href="#">Team</a></p></li>
+					<li class="documents_menu_item"><p><a href="#">Documents</a></p></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div id="content">
+			<article>
+				<h2><span>How</span> much does it cost?</h2>
+
+				<p>
+					You only pay internet traffic to your mobile operator. 
+					Mobile tracking application uses smart algorithm that helps 
+					leverage the traffic amount and turns a low traffic amount 
+					into lower costs.
+				</p>
+
+				<p>
+					Tracking application and web service are free of charge.
+				</p>	
+			</article>
+
+			<article>
+				<h2><span>What</span> do you need to start?</h2>
+
+				<p>
+					Free TheHorizons account Register »
+				</p>
+
+				<p>
+					Mobile phone with Horizons App.
+				</p>
+
+				<p>
+					External Bluetooth GPS receiver in case 
+					your mobile phone does not have embedded one.
+				</p>
+			</article>
+		</div>
+
+		<footer>
+			<p>
+				&copy; 2014 Tracking Devices | <a href="#">Term of Service</a> | <a href="#">Privacy Policy</a>
+			</p>
+		</footer>
+	</body>	
+</html> 
