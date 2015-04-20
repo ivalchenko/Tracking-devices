@@ -1,5 +1,27 @@
+#content section:first-of-type {
+	/*background-color: #b9cb5e;*/
+	float: left;
+	width: 35%;
+}
+
+#content section:first-of-type h2 {
+	text-align: center;
+	font-size: 2em;
+	color: #d09d5a;
+}
+
+#content section:last-of-type {
+	/*background-color: #dc6464;*/
+	float: right;
+	width: 65%;
+}
+
+#content section:first-of-type form {
+	margin-top: 2em;
+	text-align: center;
+}
+
 #map {
 	margin: 0 auto;
-	/*background-color: red;*/
 	margin-bottom: 2em;
 }
