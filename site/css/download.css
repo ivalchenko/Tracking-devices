@@ -1,0 +1,30 @@
+article h2 {
+	font-size: 2em;
+	padding-bottom: 1em;
+	color: #d09d5a;
+}
+
+article p {
+	font-size: 1.5em;
+}
+
+article div {
+	margin-top: 2em;
+}
+
+article div:last-of-type {
+	margin-bottom: 3em;
+}
+
+article div p:first-of-type {
+	margin-bottom: 0.2em;
+}
+
+article div p a {
+	text-decoration: none;
+	color: #d09d5a; 
+}
+
+article div p a:hover {
+	color: #ecb46a; 
+}
