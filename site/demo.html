@@ -23,7 +23,7 @@
 		<script src="js/opentrack.js"></script>-->
 	</head>
 	
-	<body onload="LoadMap()"> 
+	<body> 
 		<header>
 			<section>
 				<form action="/" method="POST">
@@ -52,16 +52,30 @@
 				<ul>
 					<li class="home_menu_item"><p><a href="index.html">Home</a></p></li>
 					<li class="demo_menu_item"><p>Demo</p></li>
-					<li class="download_menu_item"><p><a href="#">Download</a></p></li>
-					<li class="team_menu_item"><p><a href="#">Team</a></p></li>
-					<li class="documents_menu_item"><p><a href="#">Documents</a></p></li>
+					<li class="download_menu_item"><p><a href="download.html">Download</a></p></li>
+					<li class="team_menu_item"><p><a href="team.html">Team</a></p></li>
+					<li class="documents_menu_item"><p><a href="documents.html">Documents</a></p></li>
 				</ul>
 			</nav>
 		</header>
 
 		<div id="content">
-			<div id="map" style="width: 600px; height: 400px"></div>
+			<section>
+				<h2>Show</h2>
+
+				<form action="php/post-date.php" method="POST">
+   					<p>
+   						Choose date: 
+   						<input type="date" name="calendar">
+   						<input type="submit" value="Submit" name="button">
+   					</p>
+  				</form>
+			</section>
+
+			<section>
+				<div id="map" style="width: 600px; height: 400px"></div>
 			<!--<div id="map" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>-->
+			</section>
 		</div>
 
 		<footer>
