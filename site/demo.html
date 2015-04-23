@@ -10,17 +10,11 @@
 		
 		<!--Обмануть старый IE и заставить его применять стили CSS к элементам HTML5. Взято из книги Б.Лоусона и Р.Шарпа.-->
 		<script src="js/new_elements.js"></script>
-
 		<!--Яндекс Карты API-->
 		<script src="http://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
-		<!--<script src="js/map.js"></script>-->
 		<!--AJAX-->
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/ajax/coordinates_load.js"></script>
-
-		<!--OpenLayers-2.13.1-->
-		<!--<script src="js/OpenLayers-2.13.1/OpenLayers.js"></script>
-		<script src="js/opentrack.js"></script>-->
 	</head>
 	
 	<body> 
@@ -61,20 +55,30 @@
 
 		<div id="content">
 			<section>
-				<h2>Show</h2>
+				<div>
+					<h2>Live tracking</h2>
 
-				<form action="php/post-date.php" method="POST">
-   					<p>
-   						Choose date: 
-   						<input type="date" name="calendar">
-   						<input type="submit" value="Submit" name="button">
-   					</p>
-  				</form>
+					<form id="live-track" name="live-track">
+   						<input type="button" value="Start" onClick="module.startLiveTrack();">
+   						<input type="button" value="Stop" onClick="module.stopLiveTrack();">
+  					</form>
+				</div>
+
+				<div>
+					<h2>Track by date</h2>
+
+					<form id="track-by-date" name="track-by-date">
+   						<p>
+   							Choose date: 
+   							<input type="date" id="date" name="date">
+   							<input type="button" value="Submit" onClick="module.trackByDate();">
+   						</p>
+  					</form>
+				</div>
 			</section>
 
 			<section>
 				<div id="map" style="width: 600px; height: 400px"></div>
-			<!--<div id="map" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>-->
 			</section>
 		</div>
 
@@ -85,3 +89,6 @@
 		</footer>
 	</body>	
 </html> 
+
+
+
