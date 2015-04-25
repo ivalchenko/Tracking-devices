@@ -1,7 +1,6 @@
 <?php
 	include 'db_connector.php';
 
-	$startFrom = $_POST['startFrom']; 
 	$date = $_POST['date'];
 	$res = mysqli_query($db, "SELECT * FROM `coordinates` WHERE `date` BETWEEN '$date 00:00:00' AND '$date 23:59:59'"); 
 
