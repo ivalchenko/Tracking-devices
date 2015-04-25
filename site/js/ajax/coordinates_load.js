@@ -5,9 +5,9 @@ $(document).ready(function(){
     var counter = 1; // Убрать
     var isLive = false;
 
-    /*ymaps.ready(init);
+    ymaps.ready(init);
     var myMap, myPlacemark;
-    var myCollection;  */
+    var myCollection;  
 
      function init(){  
         myCollection = new ymaps.GeoObjectCollection();
@@ -20,21 +20,18 @@ $(document).ready(function(){
 
     window.module = {
       trackByDate: function () {
-        alert('Track by DATE');
-        date = document.forms["track-by-date"].elements["track-by-date"].value;
+        date = document.forms["track-by-date"].elements["date"].value;
         myCollection.removeAll(); // удаляем прошлые метки
         ajax_past_function(date);
       },
 
       startLiveTrack: function () {
-        alert('Live tracking: ON');
         isLive = true;
         myCollection.removeAll();
         setInterval(ajax_live_function, 4000);
       },
 
       stopLiveTrack: function () {
-        alert('STOP tracking!');
         isLive = false;
       }
     }
@@ -70,8 +67,6 @@ $(document).ready(function(){
 
                     myMap.setCenter([data.lat, data.lon]); // центрируем карту на новом положении отслеиваемого объекта
                     myCollection.add(myPlacemark); 
-
-                    //myMap.geoObjects.add(myPlacemark);
                     myMap.geoObjects.add(myCollection);
                     counter++;
                 });
@@ -87,7 +82,7 @@ $(document).ready(function(){
         $.ajax({            
             url: 'php/handler_by_date.php',
             method: 'POST',
-            data: {"startFrom" : startFrom, "date" : date},
+            data: {"date" : date},
   
             beforeSend: function() {
                 inProgress = true; 
@@ -108,14 +103,11 @@ $(document).ready(function(){
 
                     myMap.setCenter([data.lat, data.lon]);
                     myCollection.add(myPlacemark); 
-
-                    //myMap.geoObjects.add(myPlacemark);
                     myMap.geoObjects.add(myCollection);
                     counter++;
                 });
                     
                 inProgress = false;
-                startFrom += 1;
         }});
     } 
 
