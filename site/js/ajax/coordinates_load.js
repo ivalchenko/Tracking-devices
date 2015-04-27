@@ -4,17 +4,18 @@ $(document).ready(function(){
     var startFrom = 1; // С какой статьи надо делать выборку из базы при ajax-запросе
     var counter = 1; // Убрать
     var isLive = false;
+    var myMap, myPlacemark, myCollection;
+    var myZoom = 18;
+    var myDuration = 1000; // в милисекундах
 
     ymaps.ready(init);
-    var myMap, myPlacemark;
-    var myCollection;  
 
-     function init(){  
+    function init(){  
         myCollection = new ymaps.GeoObjectCollection();
 
         myMap = new ymaps.Map("map", {
             center: [53.8912, 27.5669],
-            zoom: 18
+            zoom: myZoom
         });
     }
 
@@ -62,10 +63,15 @@ $(document).ready(function(){
 
                     myPlacemark = new ymaps.Placemark([data.lat, data.lon], { 
                         content: counter, 
-                        balloonContent: data.time
+                        balloonContent: '<h2>' + data.date.substring(11, 18) + '</h2>'
                     });
 
-                    myMap.setCenter([data.lat, data.lon]); // центрируем карту на новом положении отслеиваемого объекта
+                    //myMap.setCenter([data.lat, data.lon]); // центрируем карту на новом положении отслеиваемого объекта
+
+                    myMap.setCenter([data.lat, data.lon], myZoom, {
+                        duration: myDuration
+                    });
+
                     myCollection.add(myPlacemark); 
                     myMap.geoObjects.add(myCollection);
                     counter++;
@@ -97,8 +103,7 @@ $(document).ready(function(){
 
                     myPlacemark = new ymaps.Placemark([data.lat, data.lon], { 
                         content: counter, 
-                        balloonContent: data.time
-                        //balloonContent: '<img src="https://d3da265we6b140.cloudfront.net/tasks/assets/img/marketing/examples/mcenroe-after-500px.png">'
+                        balloonContent: '<h2>' + data.date.substring(11, 18) + '</h2>'
                     });
 
                     myMap.setCenter([data.lat, data.lon]);
